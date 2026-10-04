@@ -1,0 +1,26 @@
+{
+  "name": "Among Us Offline",
+  "short_name": "Among Us",
+  "description": "Jogo Among Us offline funcional - completo com bots IA",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#FF0000",
+  "orientation": "landscape-primary",
+  "scope": "./",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23FF0000' width='192' height='192'/><rect fill='%23000000' x='48' y='72' width='32' height='48'/></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect fill='%23000000' width='512' height='512'/></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["games"]
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Among Us Offline - Jogo multiplayer offline funcional">
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23FF0000' width='192' height='192'/><rect fill='%23000000' x='48' y='72' width='32' height='48'/></svg>">
+    <link rel="stylesheet" href="style.css">
+    <title>Among Us Offline</title>
+</head>
+<body>
+    <div id="gameContainer">
+        <div id="header">
+            <h1>Among Us Offline</h1>
+            <div id="statsBar">
+                <div id="taskProgress">
+                    <div id="progressBar"></div>
+                    <span id="progressText">0%</span>
+                </div>
+                <div id="playerInfo">
+                    <span id="playerName">Player</span> |
+                    <span id="playerStatus">Moving</span>
+                </div>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas" width="1024" height="768"></canvas>
+
+        <div id="controls">
+            <div id="keyboardControls">
+                <p><strong>Controles:</strong> WASD ou clique para mover | Botão no canto ou T = usar/matar | V = vent | E = botão de emergência | B = sabotagem (impostor) | F = corrigir sabotagem | ESC = pausar</p>
+                <p id="taskHint">Toque no botão no canto inferior direito para interagir!</p>
+            </div>
+            <div id="debug" style="display: none;">
+                <p>FPS: <span id="fps">0</span> | Players: <span id="playerCount">0</span></p>
+                <p>Mouse: <span id="mousePos">0,0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="pauseMenu" class="hidden">
+        <div class="menuContent">
+            <h2>Jogo Pausado</h2>
+            <button id="resumeBtn">Continuar</button>
+            <button id="restartBtn">Reiniciar</button>
+            <label>
+                <input type="checkbox" id="debugToggle">
+                Modo Debug
+            </label>
+        </div>
+    </div>
+
+    <script>
+        // Registrar Service Worker para suporte offline
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js').catch(() => {
+                console.log('Service Worker não disponível');
+            });
+        }
+    </script>
+    <script src="src/game.js"></script>
+</body>
+</html>

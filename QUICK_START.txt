@@ -1,0 +1,139 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    AMONG US OFFLINE - QUICK START                          ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+📋 INSTRUÇÕES DE SETUP:
+
+1. OPÇÃO MAIS FÁCIL (abrir direto):
+   - Extraia o ZIP
+   - Clique duas vezes em "index.html"
+   - Pronto! O jogo abre no navegador
+
+2. OPÇÃO COM SERVIDOR (para PWA funcionar):
+   
+   Com Python 3:
+   $ python -m http.server 8000
+   
+   Com Python 2:
+   $ python -m SimpleHTTPServer 8000
+   
+   Com Node.js:
+   $ npx http-server
+   
+   Depois acesse: http://localhost:8000
+
+════════════════════════════════════════════════════════════════════════════════
+
+🎮 CONTROLES DO JOGO:
+
+   WASD          = Movimento contínuo
+   Mouse Click   = Mover para local clicado
+   T             = Completar task próxima (quando perto)
+   ESC           = Pausar
+   D             = Debug mode (FPS, posições, etc)
+
+════════════════════════════════════════════════════════════════════════════════
+
+🎯 OBJETIVO:
+
+   1. Mova seu crewmate pela nave
+   2. Aproxime-se das tasks (mostradas em amarelo)
+   3. Aperte T para completar
+   4. Veja os bots completando suas tasks também
+   5. Acompanhe a barra de progresso no topo
+   6. Objetivo: 100% de progresso em todas as tasks!
+
+════════════════════════════════════════════════════════════════════════════════
+
+📊 O QUE VOCÊ VÊ:
+
+   - Seu crewmate: VERMELHO (você controla)
+   - 4 Bots: AZUL, VERDE, AMARELO, LARANJA (IA automática)
+   - Salas: Retângulos com nomes (Cafeteria, Weapons, O2, etc)
+   - Vents: Círculos cinzentos (não pode usar, só bots)
+   - Tasks: Mostradas quando você chega perto
+
+════════════════════════════════════════════════════════════════════════════════
+
+⚡ RECURSOS PRINCIPAIS:
+
+   ✅ 14 salas completas (The Skeld map)
+   ✅ 18 tasks diferentes
+   ✅ 4 bots IA inteligentes
+   ✅ Barra de progresso em tempo real
+   ✅ Offline - sem internet necessária
+   ✅ PWA - pode instalar como app
+   ✅ Sem dependências - rápido e leve
+
+════════════════════════════════════════════════════════════════════════════════
+
+🐛 MODE DEBUG:
+
+   Pressione D para ver:
+   - Posição do seu crewmate
+   - Posição do mouse
+   - Quantidade de players
+   - Tasks completadas
+   - FPS
+
+════════════════════════════════════════════════════════════════════════════════
+
+💡 DICAS:
+
+   - Os bots vão sozinhos completar as tasks atribuídas a eles
+   - Cada task tem um tempo diferente baseado no tipo
+   - Você pode completar qualquer task, não só as atribuídas a você
+   - O pathfinding dos bots não é perfeito, mas funciona!
+   - Salve no GitHub Pages para jogar em qualquer lugar
+
+════════════════════════════════════════════════════════════════════════════════
+
+📁 ESTRUTURA DO PROJETO:
+
+   among-us-game/
+   ├── index.html              HTML + PWA manifest
+   ├── manifest.json           Configuração PWA
+   ├── service-worker.js       Suporte offline
+   ├── style.css               Estilos
+   ├── src/game.js             Engine principal (todo o jogo!)
+   ├── package.json            NPM scripts
+   ├── README.md               Documentação completa
+   └── QUICK_START.txt         Este arquivo
+
+════════════════════════════════════════════════════════════════════════════════
+
+❓ FAQ:
+
+P: Por que não vejo a progress bar mudando?
+R: A progress bar se atualiza quando tasks são completadas. Pressione T perto
+   de uma task, ou espere os bots completarem (você vai ver o diamante amarelo
+   acima deles quando estiverem fazendo task).
+
+P: Os bots não estão se movendo?
+R: Eles se movem, mas pode ser lento no início enquanto navegam até as tasks.
+   Use o debug mode (D) para acompanhar.
+
+P: Posso jogar com amigos?
+R: Essa versão é single-player com bots. Multiplayer é uma melhoria futura.
+
+P: Como instalo como app?
+R: Se acessar via servidor (não arquivo local), o navegador vai oferecer
+   "Instalar app" ou "Add to home screen".
+
+════════════════════════════════════════════════════════════════════════════════
+
+🚀 PRÓXIMAS MELHORIAS:
+
+   - Modo multiplayer local
+   - Sistema de impostor
+   - Mais mapas (Polus, Airship)
+   - Sons e música
+   - Animações mais suaves
+   - Gamepad support
+
+════════════════════════════════════════════════════════════════════════════════
+
+Desenvolvido com ❤️ em Vanilla JavaScript
+Fan game de Among Us (Innersloth)
+
+Divirta-se! 🎮

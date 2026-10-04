@@ -1,0 +1,23 @@
+{
+  "name": "among-us-offline",
+  "version": "1.0.0",
+  "description": "Among Us offline game - fully functional with bot AI",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000 || python -m SimpleHTTPServer 8000",
+    "dev": "npx http-server",
+    "build": "echo 'No build required - vanilla JS'",
+    "test": "echo 'No tests configured'"
+  },
+  "keywords": [
+    "among-us",
+    "game",
+    "offline",
+    "pwa",
+    "canvas",
+    "javascript"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {}
+}
