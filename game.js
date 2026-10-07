@@ -2202,15 +2202,30 @@ class Game {
 document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('gameCanvas');
 
-    const container = document.getElementById('gameContainer');
-    const maxWidth = Math.min(window.innerWidth, 1024);
-    const scale = maxWidth / 1024;
+    if (!canvas) {
+        console.error('Canvas não encontrado!');
+        return;
+    }
 
-    canvas.style.width = (1024 * scale) + 'px';
-    canvas.style.height = (768 * scale) + 'px';
+    // IMPORTANT: Canvas width/height devem ser 1024x768 (valores reais, não CSS)
+    // Isso garante que o contexto 2D use as dimensões corretas
+    // Scaling é feito apenas em CSS, não em canvas.width/height
+    // canvas.width = 1024; // Já está no HTML
+    // canvas.height = 768; // Já está no HTML
 
-    const game = new Game(canvas);
-    window.__game = game; // debug/dev handle
+    try {
+        const game = new Game(canvas);
+        window.__game = game; // debug/dev handle
+        console.log('Jogo iniciado com sucesso!');
+    } catch (error) {
+        console.error('Erro ao iniciar o jogo:', error);
+        canvas.getContext('2d').fillStyle = '#FF0000';
+        canvas.getContext('2d').fillRect(0, 0, canvas.width, canvas.height);
+        canvas.getContext('2d').fillStyle = '#FFFFFF';
+        canvas.getContext('2d').font = '20px Arial';
+        canvas.getContext('2d').fillText('ERRO: ' + error.message, 50, 100);
+        return;
+    }
 
     const progressBar = document.getElementById('progressBar');
     const sheet = document.createElement('style');
@@ -2221,8 +2236,6 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(sheet);
 
-    if (document.getElementById('playerName') && game.state.players[0]) {
-        const player = game.state.players[0];
-        document.getElementById('playerName').textContent = player.name;
-    }
+    // Não tente acessar players[0] ainda - o jogo ainda está no LOBBY
+    // Players só são criados depois que o usuário clica "JOGAR"
 });
